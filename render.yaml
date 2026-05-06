@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: ecommerce-backend
+    runtime: python
+    rootDir: extensions/backend
+    buildCommand: pip install flask flask-cors psycopg2-binary python-dotenv pyjwt bcrypt apscheduler requests
+    startCommand: python run_with_extensions.py
+    envVars:
+      - key: PORT
+        value: 10000
