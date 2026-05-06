@@ -1,0 +1,22 @@
+/* EXTENSION — components/wishlist/WishlistPanelPaged.css  Scoped .wlp-* */
+
+.wlp-root { }   /* inherits all .wl-* styles from WishlistPanel.css */
+
+.wlp-pagination {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  padding: 20px 0 8px;
+}
+.wlp-pg-btn {
+  background: var(--bg-card, #111118);
+  border: 1.5px solid var(--border, #1e1e2e);
+  border-radius: 8px; color: var(--text, #e8e8f0);
+  padding: 8px 18px; font-size: 0.85rem; cursor: pointer;
+  transition: border-color 0.2s, opacity 0.2s;
+}
+.wlp-pg-btn:hover:not(:disabled) { border-color: var(--accent, #6c63ff); }
+.wlp-pg-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.wlp-pg-info {
+  font-size: 0.8rem; color: var(--text-muted, #6b6b8a);
+  font-family: var(--font-mono, 'DM Mono', monospace);
+}

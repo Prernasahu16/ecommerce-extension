@@ -1,0 +1,82 @@
+/* ============================================================
+   EXTENSION — components/auth/AuthModal.css
+   Scoped .am-* prefix — zero conflict with existing styles.
+   ============================================================ */
+
+.am-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999;
+  animation: am-fade 0.2s ease;
+}
+@keyframes am-fade { from { opacity: 0; } to { opacity: 1; } }
+
+.am-modal {
+  background: var(--bg-card, #111118);
+  border: 1.5px solid var(--border, #1e1e2e);
+  border-radius: 20px;
+  padding: 36px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  animation: am-slide 0.25s ease;
+}
+@keyframes am-slide { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.am-close {
+  position: absolute; top: 16px; right: 16px;
+  background: none; border: none;
+  color: var(--text-muted, #6b6b8a); font-size: 1rem;
+  cursor: pointer; padding: 6px 10px; border-radius: 6px;
+  transition: color 0.2s;
+}
+.am-close:hover { color: var(--text, #e8e8f0); }
+
+.am-logo {
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em;
+  color: var(--accent, #6c63ff); margin-bottom: 16px;
+}
+.am-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 6px; color: var(--text, #e8e8f0); }
+.am-sub { font-size: 0.85rem; color: var(--text-muted, #6b6b8a); margin-bottom: 24px; line-height: 1.5; }
+
+.am-tabs {
+  display: flex; border-bottom: 1.5px solid var(--border, #1e1e2e);
+  margin-bottom: 20px;
+}
+.am-tab {
+  flex: 1; background: none; border: none; border-bottom: 2px solid transparent;
+  color: var(--text-muted, #6b6b8a); padding: 10px; font-size: 0.875rem;
+  cursor: pointer; transition: all 0.2s; margin-bottom: -1.5px;
+}
+.am-tab:hover { color: var(--text, #e8e8f0); }
+.am-tab-active { color: var(--accent, #6c63ff); border-bottom-color: var(--accent, #6c63ff); font-weight: 600; }
+
+.am-form { display: flex; flex-direction: column; gap: 12px; margin-bottom: 16px; }
+.am-input {
+  background: var(--bg, #0a0a0f);
+  border: 1.5px solid var(--border, #1e1e2e);
+  border-radius: 10px; color: var(--text, #e8e8f0);
+  padding: 12px 16px; font-size: 0.9rem; outline: none;
+  transition: border-color 0.2s; width: 100%; box-sizing: border-box;
+}
+.am-input:focus { border-color: var(--accent, #6c63ff); }
+.am-input::placeholder { color: var(--text-muted, #6b6b8a); }
+
+.am-error {
+  background: rgba(255,101,132,0.1); border: 1px solid rgba(255,101,132,0.3);
+  color: var(--negative, #ff6584); padding: 10px 14px;
+  border-radius: 8px; font-size: 0.82rem; margin-bottom: 14px;
+}
+
+.am-submit {
+  width: 100%; background: var(--accent, #6c63ff); color: #fff;
+  border: none; border-radius: 10px; padding: 13px;
+  font-size: 0.95rem; font-weight: 700; cursor: pointer;
+  transition: opacity 0.2s; margin-bottom: 16px;
+}
+.am-submit:hover:not(:disabled) { opacity: 0.88; }
+.am-submit:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.am-note { font-size: 0.75rem; color: var(--text-muted, #6b6b8a); text-align: center; line-height: 1.5; }
